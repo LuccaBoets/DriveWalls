@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driving", "Driving", "{13A7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driven", "Driven", "{6F26A147-7859-48C9-BF6C-9920F94EBC68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionRoot", "CompositionRoot\CompositionRoot.csproj", "{FAAF44BE-B1FE-4CD5-8FDB-BC638BD4E5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F8D69007-E8EE-473A-AEB1-9118612EFE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D69007-E8EE-473A-AEB1-9118612EFE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D69007-E8EE-473A-AEB1-9118612EFE90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAF44BE-B1FE-4CD5-8FDB-BC638BD4E5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAF44BE-B1FE-4CD5-8FDB-BC638BD4E5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAF44BE-B1FE-4CD5-8FDB-BC638BD4E5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAF44BE-B1FE-4CD5-8FDB-BC638BD4E5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

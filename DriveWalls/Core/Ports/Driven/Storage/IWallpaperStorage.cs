@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Ports.Driving.Api
+namespace Core.Ports.Driven.Storage
 {
-    public interface IMetadataService : IService<Metadata>
+    public interface IWallpaperStorage
     {
+        String Save(String uri);
 
+        void Delete(Wallpaper wallpaper);
     }
 }

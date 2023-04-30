@@ -1,5 +1,6 @@
 ﻿using Core.Models;
-using Core.Ports.Driving;
+using Core.Ports.Driven.Storage;
+using Core.Ports.Driving.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +9,25 @@ using System.Threading.Tasks;
 
 namespace Core.Service
 {
-    internal class WallpaperService : IWallpaperService
+    public class WallpaperService : Service<Wallpaper>, IWallpaperService
     {
-        public Wallpaper Create(Wallpaper @object)
+        private IWallpaperStorage storage;
+        
+        public WallpaperService(IWallpaperRepository repository, IWallpaperStorage storage) : base(repository)
         {
-            throw new NotImplementedException();
+            this.storage = storage;
         }
 
-        public void Delete(Wallpaper @object)
+        public override Wallpaper Create(Wallpaper @object)
         {
-            throw new NotImplementedException();
+            storage.Save("");
+            return base.Create(@object);
         }
 
-        public Task<List<Wallpaper>> GetAll()
+        public override void Delete(Wallpaper @object)
         {
-            throw new NotImplementedException();
-        }
-
-        public Wallpaper GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Wallpaper Update(Wallpaper modifiedObject)
-        {
-            throw new NotImplementedException();
+            storage.Delete(@object);
+            base.Delete(@object);
         }
     }
 }

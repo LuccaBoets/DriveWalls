@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Ports.Driving.Api
 {
-    public interface IWallpaperService : IRepository<Wallpaper>
+    public interface IWallpaperService : IService<Wallpaper>
     {
 
     }

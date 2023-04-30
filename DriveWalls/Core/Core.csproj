@@ -6,10 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-    <Folder Include="Ports\Driven\" />
-    <Folder Include="Ports\Driving\" />
-  </ItemGroup>
-
 </Project>

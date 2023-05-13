@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Ports.Driving.Api
 {
-    public interface IWallpaperMetadataRepository : IRepository<Metadata>
+    public interface IWallpaperMetadataRepository : IRepository<WallpaperMetadata>
     {
     }
 }

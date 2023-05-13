@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Service
+namespace Core.Api.Service
 {
     public class WallpaperService : Service<Wallpaper>, IWallpaperService
     {
         private IWallpaperStorage storage;
-        
+
         public WallpaperService(IWallpaperRepository repository, IWallpaperStorage storage) : base(repository)
         {
             this.storage = storage;

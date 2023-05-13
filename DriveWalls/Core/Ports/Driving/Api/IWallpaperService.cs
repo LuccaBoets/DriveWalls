@@ -9,6 +9,5 @@ namespace Core.Ports.Driving.Api
 {
     public interface IWallpaperService : IService<Wallpaper>
     {
-
     }
 }

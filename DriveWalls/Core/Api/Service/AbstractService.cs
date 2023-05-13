@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Service
+namespace Core.Api.Service
 {
-    public class Service<T>
+    public class Service<T> : IService<T>
     {
         private IRepository<T> repository;
 

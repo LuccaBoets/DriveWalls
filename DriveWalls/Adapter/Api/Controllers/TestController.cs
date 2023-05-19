@@ -2,15 +2,15 @@
 
 namespace Adapter.Api.Controllers
 {
-    [ApiController]
     [Route("test")]
+    [ApiController]
     public class TestController : ControllerBase
     {
         [HttpGet]
-        public string test()
+        public String test()
         {
             Console.WriteLine("test");
-            return "test";
+            return ("test");
         }
     }
 }

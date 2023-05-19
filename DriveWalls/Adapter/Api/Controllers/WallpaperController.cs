@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Adapter.Api.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
-    [Route("test")]
+    [Route("[controller]")]
     public class WallpaperController : ControllerBase
     {
         private readonly IWallpaperService _wallpaperService;

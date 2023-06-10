@@ -17,11 +17,16 @@ namespace Core.Api.Service
         {
             this.storage = storage;
         }
-
-        public override Wallpaper Create(Wallpaper @object)
+        
+        public override Task<Wallpaper> Create(Wallpaper @object)
         {
-            storage.Save("");
-            return base.Create(@object);
+            throw new NotImplementedException();
+        }
+
+        public async Task<Wallpaper> Create(Wallpaper @object, String url)
+        {
+            @object.Id = storage.Save(url);
+            return await base.Create(@object);
         }
 
         public override void Delete(Wallpaper @object)

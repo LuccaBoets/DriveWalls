@@ -9,10 +9,9 @@ namespace Core.Ports.Driving.Api
     public interface IRepository<T>
     {
         Task<List<T>> GetAll();
-        T GetById(int id);
-
-        T Create(T @object);
-        T Update(T modifiedObject);
+        Task<T> GetById(int id);
+        Task<T> Create(T @object);
+        Task<T> Update(T modifiedObject);
         void Delete(T @object);
     }
 }

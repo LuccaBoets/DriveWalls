@@ -1,4 +1,5 @@
 ﻿using Core.Api.Service;
+using Core.Dto;
 using Core.Models;
 using Core.Ports.Driving.Api;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +17,17 @@ namespace Adapter.Api.Controllers
             _wallpaperService = wallpaperService;
         }
 
-        [HttpGet(Name = "GetWallpaper")]
-        public async Task<IEnumerable<Wallpaper>> Get()
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
             await Console.Out.WriteLineAsync("GetWallpaper");
-            return await _wallpaperService.GetAll();
+            return Ok(await _wallpaperService.GetAll());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(WallpaperCreationDto wallpaper)
+        {
+            return Created("uri placeholder", await _wallpaperService.Create(wallpaper.GetWallpaper(), wallpaper.ImageUrl));
         }
     }
 }

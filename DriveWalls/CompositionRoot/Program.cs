@@ -1,17 +1,17 @@
-﻿//using Adapter.Api;
-//using Core.Api.Service;
-//using Core.Ports.Driving.Api;
-//using Database.Repository;
-//using Microsoft.Extensions.DependencyInjection;
+﻿using Core.Api.Service;
+using Core.Ports.Driven.Storage;
+using Core.Ports.Driving.Api;
+using Database.Repository;
+using Microsoft.Extensions.DependencyInjection;
+using Storage;
 
-//var api = new AdapterApi(args, options =>
-//{
-//    options.AddScoped<IWallpaperService, WallpaperService>();
-//    options.AddScoped<IWallpaperMetadataService, WallpaperMetadataService>();
-//    options.AddScoped<IMetadataService, MetadataService>();
-//    options.AddScoped<IWallpaperRepository, WallpaperRepository>();
-//});
+var options = new Action<IServiceCollection>(services =>
+{
+    services.AddScoped<IWallpaperService, WallpaperService>();
+    services.AddScoped<IWallpaperMetadataService, WallpaperMetadataService>();
+    services.AddScoped<IMetadataService, MetadataService>();
+    services.AddScoped<IWallpaperRepository, WallpaperRepository>();
+    services.AddScoped<IWallpaperStorage, WallpaperStorage>();
+});
 
-//await api.RunAsync();
-
-Adapter.Api.Program.Main(args);
+Adapter.Api.Program.Main(args, options);

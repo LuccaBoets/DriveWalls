@@ -16,26 +16,26 @@ namespace Core.Api.Service
             this.repository = repository;
         }
 
-        public virtual Task<List<T>> GetAll()
+        public async virtual Task<List<T>> GetAll()
         {
-            return repository.GetAll();
+            return await repository.GetAll();
         }
 
-        public virtual T GetById(int id)
+        public async virtual Task<T> GetById(int id)
         {
-            return repository.GetById(id);
+            return await repository.GetById(id);
         }
 
-        public virtual T Create(T @object)
+        public async virtual Task<T> Create(T @object)
         {
-            return repository.Create(@object);
+            return await repository.Create(@object);
         }
-        public virtual T Update(T modifiedObject)
+        public async virtual Task<T> Update(T modifiedObject)
         {
-            return repository.Update(modifiedObject);
+            return await repository.Update(modifiedObject);
         }
 
-        public virtual void Delete(T @object)
+        public async virtual void Delete(T @object)
         {
             repository.Delete(@object);
         }

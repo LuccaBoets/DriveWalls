@@ -1,36 +1,46 @@
 ﻿using Core.Models;
 using Core.Ports.Driving.Api;
-using System;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database.Repository
 {
     public class WallpaperRepository : IWallpaperRepository
     {
-        public Wallpaper Create(Wallpaper @object)
+        public IFirebaseClient _client { get; set; }
+
+        public WallpaperRepository()
         {
-            throw new NotImplementedException();
+            _client = DatabaseClient.GetClient();
         }
 
+        public async Task<Wallpaper> Create(Wallpaper @object)
+        {
+            var temp = _client.PushAsync("wallpapers", @object);
+            return @object;
+        }
+        
         public void Delete(Wallpaper @object)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Wallpaper>> GetAll()
+        public async Task<List<Wallpaper>> GetAll()
+        {
+            FirebaseResponse response = await _client.GetAsync("wallpapers");
+            var wallpaperDict = JsonConvert.DeserializeObject<Dictionary<string, Wallpaper>>(response.Body);
+
+            return wallpaperDict.Values.ToList();
+        }
+
+        public Task<Wallpaper> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Wallpaper GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Wallpaper Update(Wallpaper modifiedObject)
+        public Task<Wallpaper> Update(Wallpaper modifiedObject)
         {
             throw new NotImplementedException();
         }

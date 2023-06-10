@@ -18,7 +18,7 @@ namespace Core.Api.Service
             this.repository = repository;
         }
 
-        public WallpaperMetadata Create(WallpaperMetadata @object)
+        public Task<WallpaperMetadata> Create(WallpaperMetadata @object)
         {
             return repository.Create(@object);
         }

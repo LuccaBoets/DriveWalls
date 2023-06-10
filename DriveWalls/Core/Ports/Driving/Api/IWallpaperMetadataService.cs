@@ -13,7 +13,7 @@ namespace Core.Ports.Driving.Api
         Task<List<Wallpaper>> GetAllByMetadata(List<int> metadataIds, bool matchAll);
         Task<List<Metadata>> GetAllByWallpaper(string wallpaperId);
 
-        WallpaperMetadata Create(WallpaperMetadata @object);
+        Task<WallpaperMetadata> Create(WallpaperMetadata @object);
         void Delete(WallpaperMetadata @object);
     }
 }

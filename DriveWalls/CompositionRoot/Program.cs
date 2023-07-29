@@ -8,10 +8,14 @@ using Storage;
 var options = new Action<IServiceCollection>(services =>
 {
     services.AddScoped<IWallpaperService, WallpaperService>();
+    
     services.AddScoped<IWallpaperMetadataService, WallpaperMetadataService>();
+    
     services.AddScoped<IMetadataService, MetadataService>();
-    services.AddScoped<IWallpaperRepository, WallpaperRepository>();
+    services.AddScoped<IMetadataRepository, MetadataRepository>();
+    
     services.AddScoped<IWallpaperStorage, WallpaperStorage>();
+    services.AddScoped<IWallpaperRepository, WallpaperRepository>();
 });
 
 Adapter.Api.Program.Main(args, options);

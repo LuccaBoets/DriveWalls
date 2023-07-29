@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace Database.Repository
 {
-    public class WallpaperRepository : IWallpaperRepository
+    public class WallpaperMetadataRepository : IWallpaperRepository
     {
         public IFirebaseClient _client { get; set; }
 
-        public WallpaperRepository()
+        public WallpaperMetadataRepository()
         {
             _client = DatabaseClient.GetClient();
         }

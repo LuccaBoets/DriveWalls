@@ -21,7 +21,7 @@ namespace Core.Api.Service
             return await repository.GetAll();
         }
 
-        public async virtual Task<T> GetById(int id)
+        public async virtual Task<T> GetById(string id)
         {
             return await repository.GetById(id);
         }
@@ -35,9 +35,9 @@ namespace Core.Api.Service
             return await repository.Update(modifiedObject);
         }
 
-        public async virtual void Delete(T @object)
+        public async virtual void Delete(string id)
         {
-            repository.Delete(@object);
+            repository.Delete(id);
         }
     }
 }

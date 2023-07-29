@@ -14,6 +14,6 @@ namespace Core.Ports.Driving.Api
         Task<List<Metadata>> GetAllByWallpaper(string wallpaperId);
 
         Task<WallpaperMetadata> Create(WallpaperMetadata @object);
-        void Delete(WallpaperMetadata @object);
+        void Delete(string id);
     }
 }

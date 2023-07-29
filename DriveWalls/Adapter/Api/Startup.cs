@@ -18,11 +18,22 @@ namespace Adapter.Api
         {
             // Add your services here if needed
             //options.Invoke(_builder.Services);
+
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DriveWall", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AnyOrigin", builder =>
+                {
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod();
+                });
             });
         }
 
@@ -38,6 +49,7 @@ namespace Adapter.Api
 
             app.UseHttpsRedirection();
 
+            app.UseCors("AnyOrigin");
 
             app.UseRouting();
             //app.UseAuthorization();

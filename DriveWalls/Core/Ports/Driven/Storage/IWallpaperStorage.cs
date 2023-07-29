@@ -11,6 +11,6 @@ namespace Core.Ports.Driven.Storage
     {
         String Save(String uri);
 
-        void Delete(Wallpaper wallpaper);
+        void Delete(String id);
     }
 }

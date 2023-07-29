@@ -29,10 +29,10 @@ namespace Core.Api.Service
             return await base.Create(@object);
         }
 
-        public override void Delete(Wallpaper @object)
+        public override void Delete(string id)
         {
-            storage.Delete(@object);
-            base.Delete(@object);
+            storage.Delete(id);
+            base.Delete(id);
         }
     }
 }

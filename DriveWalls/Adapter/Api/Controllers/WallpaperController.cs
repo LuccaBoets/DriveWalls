@@ -20,14 +20,20 @@ namespace Adapter.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            await Console.Out.WriteLineAsync("GetWallpaper");
             return Ok(await _wallpaperService.GetAll());
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(WallpaperCreationDto wallpaper)
         {
-            return Created("uri placeholder", await _wallpaperService.Create(wallpaper.GetWallpaper(), wallpaper.ImageUrl));
+            return Created(wallpaper.ImageUrl, await _wallpaperService.Create(wallpaper.GetWallpaper(), wallpaper.ImageUrl));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            _wallpaperService.Delete(id);
+            return Ok(id);
         }
     }
 }

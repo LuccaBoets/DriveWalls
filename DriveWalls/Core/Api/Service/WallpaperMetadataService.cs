@@ -23,12 +23,12 @@ namespace Core.Api.Service
             return repository.Create(@object);
         }
 
-        public void Delete(WallpaperMetadata @object)
+        public void Delete(string id)
         {
-            repository.Delete(@object);
+            repository.Delete(id);
         }
 
-        // TODO: logic maybe should go to repository, but i am not sure
+        // TODO: logic should maybe go to repository, but i am not sure
         // TODO: maybe should be IEnumerable instead of List
         public async Task<List<Wallpaper>> GetAllByMetadata(int metadataId)
         {

@@ -21,9 +21,9 @@ namespace Storage
             _storageService = StorageService.GetStorage();
         }
 
-        public void Delete(Wallpaper wallpaper)
+        public void Delete(String id)
         {
-            throw new NotImplementedException();
+            _storageService.Files.Delete(id.ToString()).Execute();
         }
 
         public string Save(string uri)
